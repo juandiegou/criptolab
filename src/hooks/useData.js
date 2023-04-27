@@ -5,7 +5,6 @@ export const useData = (initialData = {}) => {
 
 	const onInputChange = ({ target }) => {
 		const { name, value } = target;
-		console.log({ name, value });
 		setDataState({
 			...dataState,
 			[name]: value,

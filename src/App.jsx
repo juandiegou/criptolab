@@ -1,5 +1,6 @@
 import "./App.css";
-import { useData } from "./hooks/useData";
+import { useData } from "./hooks";
+import { decryptMessageService } from "./service";
 
 function App() {
 	const data = {
@@ -16,7 +17,9 @@ function App() {
 
 	const decryptMessage = () => {
 		if (encryptedMessage.length > 0) {
-			change("decryptedMessage", encryptedMessage);
+			const message = decryptMessageService(encryptedMessage,change);
+      
+			change("decryptedMessage", message);
 		}
 	};
 
