@@ -1,9 +1,38 @@
 export const decryptMessageService = (message, data) => {
 	/* this is an example for new snippet extension make by me xD */
-	message = message.replaceAll("o", " ");
+	message = message.replaceAll("r", " ");
+    message = message.replaceAll("o", "T");
 	message = message.replaceAll("j", "E");
-	message = message.replaceAll("$", "N");
-	message = message.replaceAll("r", "L");
+	message = message.replaceAll("$", "S");
+    message = message.replaceAll("c", "I");
+    message = message.replaceAll("f", "P");
+    message = message.replaceAll("h", "O");
+    message = message.replaceAll("!", "D");
+    message = message.replaceAll("m", "C");
+    message = message.replaceAll("h", "O");
+    message = message.replaceAll("#", "M");
+    message = message.replaceAll("l", "A");
+    message = message.replaceAll("t", "N");
+    message = message.replaceAll("d", "R");
+    message = message.replaceAll("@", "L");
+    message = message.replaceAll(")", "G");
+    message = message.replaceAll("i", "Q");
+    message = message.replaceAll("%", "F");
+    message = message.replaceAll("a", "J");
+    message = message.replaceAll("k", "V");
+    message = message.replaceAll("b", "Y");
+    message = message.replaceAll("p", "Z");
+    message = message.replaceAll("^", "W");
+
+ 
+
+
+
+
+
+    
+
+
 	for (const property of Object.keys(dict_encrip)) {
 		const caracter = searchCaracter(dict_encrip[property]);
 		if (property === "r") console.log({ caracter, property });
