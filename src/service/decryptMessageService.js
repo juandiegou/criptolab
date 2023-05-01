@@ -23,7 +23,7 @@ export const decryptMessageService = (message, data) => {
     message = message.replaceAll("b", "Y");
     message = message.replaceAll("p", "Z");
     message = message.replaceAll("^", "W");
-    message = message.replaceAll("w", "U");
+    message = message.replaceAll("g", "U");
 
 
 	for (const property of Object.keys(dict_encrip)) {
