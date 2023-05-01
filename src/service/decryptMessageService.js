@@ -24,14 +24,6 @@ export const decryptMessageService = (message, data) => {
     message = message.replaceAll("p", "Z");
     message = message.replaceAll("^", "W");
 
- 
-
-
-
-
-
-    
-
 
 	for (const property of Object.keys(dict_encrip)) {
 		const caracter = searchCaracter(dict_encrip[property]);
