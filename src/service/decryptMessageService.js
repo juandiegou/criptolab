@@ -1,25 +1,66 @@
-export const decryptMessageService = (message, data) => {
-	/* this is an example for new snippet extension make by me xD */
-	message = message.replaceAll("o", " ");
+export const decryptMessageService = (message,data) => {
+	message = message.replaceAll("r", " ");
 	message = message.replaceAll("j", "E");
-	message = message.replaceAll("$", "N");
-	message = message.replaceAll("r", "L");
+	message = message.replaceAll("l", "A");
+	message = message.replaceAll("h", "O");
+	message = message.replaceAll("$", "S");
+	message = message.replaceAll("@", "L");
+	message = message.replaceAll("c", "I");
+	message = message.replaceAll("o", "T");
+	message = message.replaceAll("#", "M");
+	message = message.replaceAll("!", "D");
+	message = message.replaceAll("g", "U");
+	message = message.replaceAll("i", "Q");
+	message = message.replaceAll(")", "G");
+	message = message.replaceAll("d", "R");	
+	message = message.replaceAll("t", "N");	
+	message = message.replaceAll("a", "J");	
+	message = message.replaceAll("m", "C");	
+	message = message.replaceAll("f", "P");	
+	message = message.replaceAll("q", "B");	
+	message = message.replaceAll("b", "Y");	
+	message = message.replaceAll("p", "Z");			
+	message = message.replaceAll("%", "F");
+	message = message.replaceAll("n", "X");
+	message = message.replaceAll("^", "W");
+	message = message.replaceAll("k", "V");
+	message = message.replaceAll("*", "H");
+	message = message.replaceAll("(", "K");
+	/*
 	for (const property of Object.keys(dict_encrip)) {
 		const caracter = searchCaracter(dict_encrip[property]);
-		if (property === "r") console.log({ caracter, property });
 		message = message.replaceAll(property, caracter);
 		data("decryptedMessage", message);
-	}
+	}*/
 	return message;
+	
 };
+
+
+function contarCaracteresV2(str) {
+	const caracteres = [...new Set(str.toLowerCase())];
+	const info = [];
+	const total = str.length;
+	for (const caracter of caracteres) {
+		const arreglo = [];
+		str.split("").map((n) => {
+			if (n.toLowerCase() === caracter) {
+				arreglo.push(n);
+			}
+		});
+		info.push(`${caracter}: ${((arreglo.length / total)*100).toFixed(6)} \n`);
+	}
+	return info;
+}
+
 
 function searchCaracter(porcent) {
 	let temp = "";
 	let por = "";
 	for (const property of Object.keys(dic_pala)) {
 		const dif = difAbs(property, porcent);
-		por =property;
-		if (dif < 0.5 && dif >= 0) {
+		por = property;
+		if (dif < 0.4 && dif >= 0) {
 			if (temp === "") {
 				temp = property;
 				continue;
@@ -34,39 +75,38 @@ function difAbs(property, porcent) {
 	return Math.abs(dic_pala[property] - porcent);
 }
 
-const dict_encrip = {
-	r: 16.064909,
-	j: 12.758621,
-	l: 9.087221,
-	h: 7.910751,
-	$: 6.389452,
-	t: 6.288032,
-	d: 5.780933,
-	c: 5.395538,
-	"!": 4.381339,
-	"@": 3.853955,
-	o: 3.6714,
-	g: 3.651116,
-	m: 3.46856,
-	"#": 2.616633,
-	f: 2.231237,
-	i: 1.37931,
-	q: 1.196755,
-	")": 0.912779,
-	k: 0.669371,
-	"*": 0.608519,
-	b: 0.547667,
-	"%": 0.40568,
-	p: 0.243408,
-	a: 0.243408,
-	n: 0.162272,
-	"(": 0.040568,
-	"^": 0.040568,
-	s: 0.0,
-};
+const dict_encrip ={
+	r: 16.097561,
+	l: 9.065041,
+	j: 12.743902,
+	h: 7.926829,
+	$: 6.402439,
+	t: 6.300813,
+	c: 5.386179,
+	d: 5.752033,
+	o: 3.658537,
+	g: 3.658537,
+	"@": 3.861789,
+	"!": 4.390244,
+	m: 3.455285,
+	"#": 2.601626,
+	f: 2.235772,
+	i: 1.382114,
+	q: 1.199187,
+	"*": 0.609756,
+	k: 0.670732,
+	b: 0.548780,
+	")": 0.914634,
+	a: 0.243902,
+	p: 0.243902,
+	"%": 0.406504,
+	n: 0.162602,
+	"^": 0.040650,
+	"(": 0.040650
+}
+
 
 const dic_pala = {
-	0: 0.0,
 	E: 13.279708,
 	A: 12.426917,
 	O: 9.455182,
@@ -77,10 +117,10 @@ const dic_pala = {
 	L: 6.010502,
 	D: 4.971512,
 	C: 4.345883,
-	T: 4.122444,
 	U: 4.088929,
+	T: 4.122444,
 	P: 2.860016,
-	M: 2.38707,
+	M: 2.387070,
 	G: 1.340632,
 	B: 1.299669,
 	V: 1.012922,
@@ -90,8 +130,13 @@ const dic_pala = {
 	H: 0.703832,
 	J: 0.506461,
 	Z: 0.484117,
-	"?": 0.189923, //TODO: mirar que caracter es
+	"?": 0.189923,
 	X: 0.152683,
 	K: 0.007448,
 	W: 0.003724,
-};
+}
+
+
+
+
+

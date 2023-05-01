@@ -7,7 +7,7 @@ export const useData = (initialData = {}) => {
 		const { name, value } = target;
 		setDataState({
 			...dataState,
-			[name]: value,
+			[name]: value.replace("\n", ""),
 		});
 	};
 
@@ -18,14 +18,14 @@ export const useData = (initialData = {}) => {
 		});
 	};
 
-  const onResetData =()=>{
-    setDataState(initialData);
-  }
+	const onResetData = () => {
+		setDataState(initialData);
+	};
 
 	return {
 		...dataState,
 		dataState,
-    onResetData,
+		onResetData,
 		onInputChange,
 		change,
 	};
